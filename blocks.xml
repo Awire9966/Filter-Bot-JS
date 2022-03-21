@@ -1,0 +1,203 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="j;/}!sRZl{4hHn(:|h6X">badwords</variable>
+  </variables>
+  <block type="s4d_login" id="dQ[.jlLBj5E;!p/QfEo." x="475" y="72">
+    <value name="TOKEN">
+      <block type="text" id="]b99@5+wCfTFXc^W{z;j">
+        <field name="TEXT">Your bot token goes here.</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_message" id="FiAeoLZ@=j{C{{k@7,kE" x="475" y="147">
+    <statement name="STATEMENTS">
+      <block type="variables_set" id="!CM0:Q3kcRPaqrREVsx%">
+        <field name="VAR" id="j;/}!sRZl{4hHn(:|h6X">badwords</field>
+        <value name="VALUE">
+          <block type="lists_create_with" id="T({u|v,R;9u.5C6wC^CK">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="z|H~f9zM%_l`Fp4loLF#">
+                <field name="TEXT">Bad words go in this list.</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="D]p8d2,+tqJS?*d0:_J,">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="CT~kdEx.ovLVL]^n}m!^">
+            <value name="IF0">
+              <block type="s4d_includes" id="@9s.~czZv2]2@{n9s1Ku">
+                <value name="TEXT">
+                  <shadow type="text" id="A*y?X(G?buUVBKy;}45w">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="s4d_message_content" id="1?@M=O!#b~}|:INC$jA`"></block>
+                </value>
+                <value name="INCLUDES">
+                  <shadow type="text" id="4kW41r1=sYHGq@kAV9s|">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="variables_get" id="ASpWHM@o,Pi.l.Y7kUls">
+                    <field name="VAR" id="j;/}!sRZl{4hHn(:|h6X">badwords</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_delete" id="%u#3Po/iD)_$5y/`*Sx:">
+                <next>
+                  <block type="s4d_send_member" id="MLDb9IWF?~jIQ4{e2M_u">
+                    <value name="CONTENT">
+                      <block type="text_join" id="o_iDCCNsZ3eJdXS6OF?{">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="@o*NvXrOmrn/+ab+`F[P">
+                            <field name="TEXT">You cant say that</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="s4d_message_author" id="*6-h1_C(a+.NGqq;4?EG"></block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="L,RMM6B4Na4]qsM#[Yx)">
+                            <field name="TEXT">!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="MEMBER">
+                      <block type="s4d_message_author" id=":qC.LcyzkaeXSVL?mL;F"></block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="/D2RS`H.^EIB[XS$`sbh">
+                <value name="IF0">
+                  <block type="s4d_includes" id="p0B,%yo#*p#Gnv;cOH[9">
+                    <value name="TEXT">
+                      <shadow type="text">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="s4d_message_content" id="s6]zA6%0G]oX!!F~L`e("></block>
+                    </value>
+                    <value name="INCLUDES">
+                      <shadow type="text" id="k{e$W~|BOe!SJTLjX0,r">
+                        <field name="TEXT"></field>
+                      </shadow>
+                      <block type="text_changeCase" id="c-]Ubnk:5EY-y/sLi[]^">
+                        <field name="CASE">UPPERCASE</field>
+                        <value name="TEXT">
+                          <shadow type="text" id="sdDj[RKDD)f8#J4RatVv">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="variables_get" id="D0Z(i/l$=.I[9gcu%{6S">
+                            <field name="VAR" id="j;/}!sRZl{4hHn(:|h6X">badwords</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="s4d_delete" id="6PRohBvF1Rk_yYhGYZ~(">
+                    <next>
+                      <block type="s4d_send_member" id="Lj$,;yPwtaPMuY8Ry@yU">
+                        <value name="CONTENT">
+                          <block type="text_join" id="Zr6H{M^IBU-8M`%GxX:M">
+                            <mutation items="3"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="7`zh]FdEB)s=V{zLh|P!">
+                                <field name="TEXT">You cant say that</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="s4d_message_author" id="0E*{ZSXcLR:GkRIbLFTE"></block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id="3iz,3BVmSbjrgTN$`mV_">
+                                <field name="TEXT">!</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="MEMBER">
+                          <block type="s4d_message_author" id="009Kbgc6n/DPJt[l|g6r"></block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="m][GIV}XpT/d7*Sp``(U">
+                    <value name="IF0">
+                      <block type="s4d_includes" id="mgw9*z9I[K?$fRC-@4Mr">
+                        <value name="TEXT">
+                          <shadow type="text">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="s4d_message_content" id="o$xG9`y]-NQ7^Q.B5Xb%"></block>
+                        </value>
+                        <value name="INCLUDES">
+                          <shadow type="text">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="text_changeCase" id="Pbo4FA$3,:#VZ2EI`EJc">
+                            <field name="CASE">TITLECASE</field>
+                            <value name="TEXT">
+                              <shadow type="text">
+                                <field name="TEXT">abc</field>
+                              </shadow>
+                              <block type="variables_get" id="tf0Vsu_|~e22NIbCS(o{">
+                                <field name="VAR" id="j;/}!sRZl{4hHn(:|h6X">badwords</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="s4d_delete" id="]iWryrRv0QO=%{CbAdHQ">
+                        <next>
+                          <block type="s4d_send_member" id="W8zrO@r=Frn:/-jCGP!`">
+                            <value name="CONTENT">
+                              <block type="text_join" id="Veez:AMb[c^vS+MK%=w%">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="kS?a!qKk.otS*-ds(l:D">
+                                    <field name="TEXT">You cant say that</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="s4d_message_author" id="n{S,D3n3aE|frwd0ZiR-"></block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="tJZI._hM/[v.~Gkzy8fM">
+                                    <field name="TEXT">!</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="MEMBER">
+                              <block type="s4d_message_author" id="JYmCX`N^7FbQjh5kXq@r"></block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
